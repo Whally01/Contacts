@@ -94,10 +94,11 @@ public class ContactsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             listener.onSelectItemClick(contact.getName());
                         }
                     });
-                    imageView.setOnClickListener(new View.OnClickListener() {
+                    imageView.setOnLongClickListener(new View.OnLongClickListener() {
                         @Override
-                        public void onClick(View view) {
-                            listener.onDeleteItemClick(contact.getName());
+                        public boolean onLongClick(View view) {
+                          listener.onDeleteItemClick(contact.getName());
+                            return true;
                         }
                     });
                 }
